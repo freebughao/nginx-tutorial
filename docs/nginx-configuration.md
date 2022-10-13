@@ -166,7 +166,7 @@ http {
             proxy_buffers 4 32k;   #proxy_buffers 缓冲区，网页平均在 32k 以下的设置
             proxy_busy_buffers_size 64k; #高负荷下缓冲大小（proxy_buffers*2）
             proxy_max_temp_file_size 2048m; #默认 1024m, 该指令用于设置当网页内容大于 proxy_buffers 时，临时文件大小的最大值。如果文件大于这个值，它将从 upstream 服务器同步地传递请求，而不是缓冲到磁盘
-            proxy_temp_file_write_size 512k; 这是当被代理服务器的响应过大时 nginx 一次性写入临时文件的数据量。
+            proxy_temp_file_write_size 512k; #这是当被代理服务器的响应过大时 nginx 一次性写入临时文件的数据量。
             proxy_temp_path  /var/tmp/nginx/proxy_temp;    ##定义缓冲存储目录，之前必须要先手动创建此目录
             proxy_headers_hash_max_size 51200;
             proxy_headers_hash_bucket_size 6400;
